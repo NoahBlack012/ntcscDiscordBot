@@ -25,7 +25,7 @@ class bad(commands.Cog):
         censors = ["fuck nt", "nt is trash", "ntci is trash", "fuck ntci"]
         if message.content == "i hate nt" or message.content == "i hate ntci":
             channel = message.channel
-            #await channel.send("Shut Up \n @noah ban him")
+            await channel.send("Shut Up \n @noah ban him")
             #await kick(self, message.content)
         elif re.match("(?i)[i]\s(hate|dislike)\s(nt|ntci)", message.content) or re.match("(?i)(nt|ntci)\sis\s(shit|trash|awful)", message.content):
             channel = message.channel
