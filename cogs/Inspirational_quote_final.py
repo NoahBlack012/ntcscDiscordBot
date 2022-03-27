@@ -7,7 +7,7 @@ inspirations = "Nothing is impossible, the word itself says “I’m possible”
 inspirations = inspirations.split("qqq")
 
 def random_inspiration():
-    index = randint(0, len(inspirations))
+    index = randint(0, len(inspirations)-1)
     return inspirations[index]  
 
 class inspirational_quote(commands.Cog):
