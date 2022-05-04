@@ -6,23 +6,23 @@ from sqlalchemy import select
 Session = sessionmaker(bind=engine)
 session = Session()
 
-def new_user(name):
+def new_user(userid):
     # Create a new user and add it to the database
-    user = User(name=name) # Create new user object
+    user = User(userid=userid) # Create new user object
     session.add(user) # Add user to session
     session.commit() # Commit to database
 
-def user_exists(name):
+def user_exists(userid):
     # Check if a user exists
-    user = session.execute(select(User).filter_by(name=name)).scalar() # Query users with given name
+    user = session.execute(select(User).filter_by(userid=userid)).scalar() # Query users with given name
     return user is not None # Return if user given by name exists in database
 
-def get_score(name):
-    user = session.execute(select(User).filter_by(name=name)).scalar() # Query users with given name
+def get_score(userid):
+    user = session.execute(select(User).filter_by(userid=userid)).scalar() # Query users with given name
     return user # Return user object
 
-def update_score(name, score_change):
-    user = session.execute(select(User).filter_by(name=name)).scalar() # Query users with given name
+def update_score(userid, score_change):
+    user = session.execute(select(User).filter_by(userid=userid)).scalar() # Query users with given name
     user.score += score_change # Add score change to current score
     session.add(user) # Add user to session
     session.commit() # Commit to database
