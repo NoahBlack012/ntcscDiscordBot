@@ -6,13 +6,17 @@ import discord
 import datetime
 import random
 
-from database import db, Northle_Table, engine, User
+try:
+    from database import db, Northle_Table, engine, User
+    # Create a new session
+    Session = sessionmaker(bind=engine)
+    session = Session()
+except:
+    # If database URI cannot be accessed
+    print ("You must set up database URI to use the northle.py file")
+
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select 
-
-# Create a new session
-Session = sessionmaker(bind=engine)
-session = Session()
 
 async def get_guess(channel, client):
     def check_response(message):

@@ -48,9 +48,9 @@ class Northle_Table(db):
         return f"{self.date}, {self.word}, {self.number}, [{self.next_words}]"
 
 # Get database URI from environment variables
-DATABASE_URI = os.environ["DATABASE_URI"]
-if not DATABASE_URI:
-    raise RuntimeError
-
-# Create database engine
-engine = create_engine(DATABASE_URI, echo=False)
+try:
+    DATABASE_URI = os.environ["A"]#["DATABASE_URI"]
+    # Create database engine
+    engine = create_engine(DATABASE_URI, echo=False)
+except KeyError: 
+    print ("DATABASE_URI cannot be accessed")
