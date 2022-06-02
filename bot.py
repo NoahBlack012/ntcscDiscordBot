@@ -15,4 +15,4 @@ for filename in os.listdir("./cogs"):
         client.load_extension(f"cogs.{filename[:-3]}")
 
 # Add your token in the string below
-client.run("YOUR_TOKEN_HERE")
+client.run("OTMxMjk0Nzk2ODgwOTUzMzY0.YeCV3g.CraNRa3Re42g-NQv4uP76XEP3Bg")
