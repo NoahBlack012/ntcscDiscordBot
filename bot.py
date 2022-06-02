@@ -14,5 +14,8 @@ for filename in os.listdir("./cogs"):
     if filename.endswith(".py"):
         client.load_extension(f"cogs.{filename[:-3]}")
 
+# Get discord token
+DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
+
 # Add your token in the string below
-client.run("YOUR_TOKEN_HERE")
+client.run(DISCORD_TOKEN)
