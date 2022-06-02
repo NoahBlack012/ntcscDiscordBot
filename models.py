@@ -1,3 +1,5 @@
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import select 
 try:
     from database import db, User, engine
     # Create a new session
@@ -6,8 +8,6 @@ try:
 except NameError:
     # If database URI cannot be accessed
     print ("You must set up the database URI to use models.py")
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import select 
 
 def new_user(userid):
     # Create a new user and add it to the database

@@ -1,5 +1,4 @@
 from email.policy import default
-from enum import unique
 import os
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.orm import declarative_base
@@ -49,7 +48,7 @@ class Northle_Table(db):
 
 # Get database URI from environment variables
 try:
-    DATABASE_URI = os.environ["A"]#["DATABASE_URI"]
+    DATABASE_URI = os.environ["DATABASE_URI"]
     # Create database engine
     engine = create_engine(DATABASE_URI, echo=False)
 except KeyError: 
