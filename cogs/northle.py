@@ -69,6 +69,7 @@ def generate_response(guess, word):
 def split_words(words):
     out = []
     current = ""
+    print (words)
     for letter in words:
         if letter == " ":
             continue
@@ -103,7 +104,14 @@ def get_current_word(user_id):
         # Update info to current day
         next_words = northle_data.next_words
         words = split_words(next_words)
-        new_word = words.pop(0)
+        try:
+            new_word = words.pop(0)
+        except IndexError:
+            # If words list is enpty
+            next_words = "class,study,norse,davis,small,music,halls,ginos,field,phone,yonge,doors,walls,chair,jones,desks,paper,notes,books,email,lunch,clubs,arson,floor,teach,erase,write,grade,board,bored,chalk,sport,table,drama,tests,latin"
+            words = split_words(next_words)
+            new_word = words.pop(0)
+
         next_words = ",".join(words) + ","
 
         # Update database info
