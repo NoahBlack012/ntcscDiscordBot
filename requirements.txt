@@ -1,5 +1,2 @@
 discord
 sqlalchemy
-re 
-datetime
-random
