@@ -1,6 +1,3 @@
-# Idea: User enters command to play northle -> Bot starts DM chain to play if user has not played yet, If user has played already - Bot ssays the user has already played
-# Other commands - Get leaderboard, get user stats
-# All commands .play_northle .northle_leadboard .northle_stats
 from discord.ext import commands
 import discord
 import datetime

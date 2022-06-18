@@ -38,7 +38,7 @@ class trivia(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         
-        if message.content.startswith('!start_trivia'):
+        if message.content.startswith('.start_trivia'):
             print(str(message.author)[:-5])
             curr_questions = []
             curr_answers = []
@@ -104,7 +104,7 @@ class trivia(commands.Cog):
             #await ctx.send(scores[str(ctx.author)[:-5]])
     @commands.command()
     async def trivia_instructions(self, ctx):
-        await ctx.send("This NT trivia will have 3 question multiple choice questions that you have to answer in 30 seconds. Use the command: '!start_trivia' to start the trivia. Once it is started, the questions will be printed. Type your answers out in a single line with the letter of the option and a space between each answer. Submit by pressing enter. Once you've submitted the bot will type out your score. \n Use the command: 'my_trivia_score' to see your highest trivia score. ")
+        await ctx.send("This NT trivia will have 3 question multiple choice questions that you have to answer in 30 seconds. Use the command: '.start_trivia' to start the trivia. Once it is started, the questions will be printed. Type your answers out in a single line with the letter of the option and a space between each answer. Submit by pressing enter. Once you've submitted the bot will type out your score. \n Use the command: 'my_trivia_score' to see your highest trivia score. ")
 
 
 """
