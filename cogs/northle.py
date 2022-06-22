@@ -170,10 +170,12 @@ class Northle(commands.Cog):
             user = session.execute(select(User).filter_by(userid=str(user_id))).scalar()
             if user is None:
                 new_user = User(userid=str(user_id))
-                new_user.northle_plays += 1
+                new_user.northle_plays = 1
                 if guesses <= 6:
-                    new_user.total_northle_guesses += guesses
-                    new_user.northle_wins += 1
+                    new_user.total_northle_guesses = guesses
+                    new_user.northle_wins = 1
+                else:
+                    new_user.northle_wins = 0
 
                 session.add(new_user) # Add data to session
                 session.commit() # Commit to database
