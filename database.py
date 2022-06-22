@@ -46,12 +46,12 @@ class Northle_Table(db):
     def __repr__(self):
         return f"{self.date}, {self.word}, {self.number}, [{self.next_words}]"
 
-# Get database URI from environment variables
+# Get database URL from environment variables
 try:
     DATABASE_URL = os.environ["DATABASE_URL"]
-    ## Change DATABASE_URI start from postgres:// to postgres:// to be compatable with sqlalchemy
+    ## Change DATABASE_URL start from postgres:// to postgres:// to be compatable with sqlalchemy
     if DATABASE_URL.startswith("postgres://"):
-        DATABASE_URI = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
     # Create database engine
     engine = create_engine(DATABASE_URL, echo=False)
 except KeyError: 
