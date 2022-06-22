@@ -37,7 +37,7 @@ class Guidance(commands.Cog):
             out += line1 + "jennifer.schwartz@tdsb.on.ca\n"
             out += line2 + "https://calendly.com/jennifer-schwartz-1/guidance-appointment%22"
         elif letter in HE:
-            out += "Your guidance counsellor is Ms.Hayden\n"
+            out += "Your guidance counsellor is Ms.Heron\n"
             out += line1 + "amanda.heron@tdsb.on.ca\n"
             out += line2 + "https://calendly.com/amanda-heron/guidance-appointment%22"
         elif letter in TA:
