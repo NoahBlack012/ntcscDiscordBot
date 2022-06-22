@@ -193,9 +193,10 @@ class Northle(commands.Cog):
     User sends: .northle_leadboard
     Bot sends: List of users with top winning percentages, Lowest guess average
     """
-    @commands.command()
-    async def northle_leadboard(self, ctx):
-        await ctx.send("Bot Test")
+    # @commands.command()
+    # async def northle_leadboard(self, ctx):
+    #     await ctx.send("Bot Test")
+    # WIP
 
     """
     User sends: .northle_stats

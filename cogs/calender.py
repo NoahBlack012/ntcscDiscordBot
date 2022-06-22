@@ -29,6 +29,9 @@ class Calender(commands.Cog):
 
                 #stop the loop from repeating
                 break
+        else:
+            # If no late starts are found in the future (Loop does not break)
+            await ctx.send("There are currently no late starts in the future")
 
     @commands.command()
     async def latestart(self, ctx):
