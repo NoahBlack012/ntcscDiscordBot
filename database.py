@@ -48,11 +48,11 @@ class Northle_Table(db):
 
 # Get database URI from environment variables
 try:
-    DATABASE_URI = os.environ["DATABASE_URI"]
+    DATABASE_URL = os.environ["DATABASE_URL"]
     ## Change DATABASE_URI start from postgres:// to postgres:// to be compatable with sqlalchemy
-    if DATABASE_URI.startswith("postgres://"):
-        DATABASE_URI = DATABASE_URI.replace("postgres://", "postgresql://", 1)
+    if DATABASE_URL.startswith("postgres://"):
+        DATABASE_URI = DATABASE_URL.replace("postgres://", "postgresql://", 1)
     # Create database engine
-    engine = create_engine(DATABASE_URI, echo=False)
+    engine = create_engine(DATABASE_URL, echo=False)
 except KeyError: 
-    print ("DATABASE_URI cannot be accessed")
+    print ("DATABASE_URL cannot be accessed")
